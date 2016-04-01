@@ -6,8 +6,7 @@ I have use the following plug-ins in my work.
 Thanks to the author.
 Now, make a note(this demo).
 
-
-
+http://yuxinchou.github.io/DemoRotateNum/
 
 ==============================================
 
