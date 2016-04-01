@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Demo-RotateNum</title>
+        <meta name="keywords" content="number rotation animation jQuery">
+        <meta name="description" content="A simple jQuery plugin to create animations of digital number rotation. Compatible with Zepto.">
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?v=0.4.5.2" />
+        <link href="http://cdn.bootcss.com/bootstrap/4.0.0-alpha.2/css/bootstrap.css" rel="stylesheet">
+        <style type="text/css">
+            body {
+                padding: 20px 100px;
+                margin: 0 auto;
+
+            }
+
+            blockquote {
+                padding: 20px;
+                margin: 0 0 20px;
+                border-left: 5px solid #eee;
+            }
+
+            #total {
+              color:#5DA4FB;
+              display: inline-block;
+              font-weight: bold;
+              font-family: Arial;
+            }
+            #min, #second {
+              color:#FB4C74;
+              display: inline-block;
+              font-weight: bold;
+              font-family: Arial;
+            }
+
+            #total .digit, 
+            #min .digit, 
+            #second .digit {
+              width: 10px;
+            }
+
+            #time {
+              display: inline-block;
+              font-weight: bold;
+              font-family: Arial;
+            }
+            #time .digit {
+              width: 30px;
+            }
+
+            @-webkit-keyframes rotation {
+              from {
+                -webkit-transform: rotate(0deg);
+                -webkit-animation-timing-function: linear;
+              }
+              to {
+                -webkit-transform: rotate(360deg);
+              }
+            }
+
+            @keyframes rotation {
+              from {
+                transform: rotate(0deg);
+                animation-timing-function: linear;
+              }
+              to {
+                transform: rotate(360deg);
+              }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Notice</h1>
+        <blockquote>
+            I have use the following plug-ins in my work.
+            Thanks to the author.
+            Now, make a note(this demo).
+        </blockquote>
+        <p>Author: Weihu Chen (cctiger36)</p>
+        <p>Name: Rotate number plugin</p>
+        <p>Repositoried: 
+            <a href="https://github.com/cctiger36/rotate-number" alt="">
+                https://github.com/cctiger36/rotate-number
+            </a>
+        </p>
+        <p>Author Demo: 
+            <a href="http://cctiger36.github.io/rotate-number/" alt="">
+                Live Demo
+            </a>
+        </p>
+        <hr/>
+        <img src="rao.png" alt="" style="animation: rotation 2s infinite linear;" />
+        <div style="font-size: 13px; display:inline-block;">
+            正在为您抓取 
+            <div id="total"></div>
+             条数据，用时 
+            <div style="color: #FF37A6; display:inline-block;">
+                <div id="min" ></div>'
+                <div id="second"></div>"
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+        <br/>
+        <div style=" background: rgba(0, 164, 255, 0.46); border: 1px solid #80C7ED; border-radius: 3px;  padding: 20px; color: #FFF;">
+            您当前已停留：
+            <div id="time"></div>
+            秒
+        </div>
+
+
+        <script src="http://cdn.bootcss.com/jquery/3.0.0-beta1/jquery.js"></script>
+        <script src="rotate-number.min.js"></script>
+        <script type="text/javascript">
+            var initTotal = 1000;
+            var initMin = 0;
+            var initSecond = 0;
+
+            var rTotal = $("#total").rotateNumber({digits: 5, digitSize: 14});
+            var rMin = $("#min").rotateNumber({digits: 2, digitSize: 14});
+            var rSecond = $("#second").rotateNumber({digits: 2, digitSize: 14});
+
+            var initTime = 0;
+            var rTime = $("#time").rotateNumber();
+
+            setInterval (showTime, 1000);
+            
+            function showTime()
+            {   
+                initTotal+=13;
+                initSecond+=1;
+                if(initSecond>59) {
+                  initSecond = 0;
+                  initMin+=1;
+                }
+        
+                rTotal.setNumber(initTotal);
+                rMin.setNumber(initMin);
+                rSecond.setNumber(initSecond);
+
+                initTime+=1;
+                rTime.setNumber(initTime);
+            }
+
+        </script>
+    </body>
+</html>
