@@ -1,20 +1,16 @@
 
-My number-animation
-================
+我的数字动画／My number-animation
+---
+我用了下面所示的插件，来实现这个功能。
+这里仅仅是记录一个使用例子。
+非常感谢原作者提供的插件。
 
-I have use the following plug-ins in my work.
-Thanks to the author.
-Now, make a note(this demo).
+演示Demo: http://yuxinchou.github.io/DemoRotateNum/
 
+---
+(以下为插件说明、链接）
 
-
-
-==============================================
-
-
-
-number-animation
-================
+#### 插件：number-animation
 
 A jQuery plugin for animating numbers using CSS3 transitions.
 
