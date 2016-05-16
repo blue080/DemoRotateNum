@@ -7,9 +7,10 @@
 
 演示Demo: http://yuxinchou.github.io/DemoRotateNum/
 
+---
+(以下为插件说明、链接）
 
-插件：number-animation
-================
+#### 插件：number-animation
 
 A jQuery plugin for animating numbers using CSS3 transitions.
 
